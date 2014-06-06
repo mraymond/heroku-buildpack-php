@@ -125,7 +125,8 @@ function install_composer_deps() {
 function install_node_deps() {
     local cwd=$(pwd)
     local target="$1"
-
+    # Since this is custom and it's detecting us as a node app, let's just disable this, speed it up
+    return 0
     if [ ! -f "$target/package.json" ]; then
         return 0
     fi
